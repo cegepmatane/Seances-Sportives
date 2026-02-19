@@ -1,0 +1,228 @@
+﻿@import "normalize.css";
+
+/* --- Polices existantes --- */
+@font-face {
+  font-family: 'The Perfect Christmas';
+  src: url('font/the_perfect_christmas/The Perfect Christmas.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Waving at Christmas';
+  src: url('font/waving_at_christmas/Waving at Christmas.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cream Cake';
+  src: url('font/cream_cake/Cream Cake.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Hello Christmas Icon';
+  src: url('font/hello_christmas_icons/Hello-Christmas-Icon-trial.ttf') format('truetype');
+}
+
+/* --- Thème girly pastel --- */
+:root {
+  --rose-principal: #ff99c8;
+  --rose-clair: #ffe5ec;
+  --lavande: #cdb4db;
+  --blanc-transp: rgba(255, 255, 255, 0.6);
+  --blanc: #fff;
+  --gris-doux: #666;
+  --violet-fonce: #9d4edd;
+  --bordure-rondeur: 1rem;
+}
+
+html {
+  font-family: 'Cream Cake', sans-serif;
+  font-size: 42px;
+  background: linear-gradient(135deg, var(--rose-clair), var(--lavande));
+  color: var(--violet-fonce);
+}
+
+/* --- Page principale --- */
+.page {
+  background-color: var(--blanc-transp);
+  backdrop-filter: blur(8px);
+  border-radius: var(--bordure-rondeur);
+  margin: 4% auto;
+  padding: 5%;
+  max-width: 800px;
+  box-shadow: 0 8px 20px rgba(255, 153, 200, 0.25);
+  min-height: 80vh;
+ /* background-image: url(illustration/fitness-girl.png);*/
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 45%;
+  color: var(--violet-fonce);
+}
+
+/* --- Titre --- */
+.page h1 {
+  font-family: 'The Perfect Christmas', cursive;
+  text-align: center;
+  color: var(--rose-principal);
+  text-shadow: 2px 2px var(--lavande);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* --- Liste des séances --- */
+#liste-seance {
+  list-style-type: none;
+  padding: 0;
+}
+
+#liste-seance li {
+  background-color: var(--blanc);
+  border-radius: var(--bordure-rondeur);
+  margin: 0.5rem 0;
+  box-shadow: 2px 4px 8px rgba(205, 180, 219, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#liste-seance li:hover {
+  transform: scale(1.03);
+  background-color: var(--rose-clair);
+}
+
+.liste-seance-item {
+  display: block;
+  padding: 0.5rem;
+  color: var(--violet-fonce);
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+/* --- Formulaire --- */
+fieldset {
+  border: 2px solid var(--rose-principal);
+  border-radius: var(--bordure-rondeur);
+  padding: 1rem;
+  background-color: var(--blanc);
+  box-shadow: 0 3px 10px rgba(255, 153, 200, 0.1);
+  color: var(--violet-fonce);
+}
+
+legend {
+  font-family: 'Waving at Christmas';
+  font-size: 1.2rem;
+  color: var(--rose-principal);
+}
+
+label {
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--gris-doux);
+}
+
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+  border: 1.5px solid var(--lavande);
+  border-radius: var(--bordure-rondeur);
+  padding: 0.3rem;
+  background-color: var(--blanc-transp);
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--rose-principal);
+  box-shadow: 0 0 8px rgba(255, 153, 200, 0.4);
+}
+
+/* --- Boutons d’action --- */
+.action {
+  display: block;
+  width: 60%;
+  margin: 1rem auto;
+  text-align: center;
+  background: linear-gradient(135deg, var(--rose-principal), var(--lavande));
+  color: var(--blanc);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--bordure-rondeur);
+  font-size: 1rem;
+  font-family: 'Waving at Christmas', sans-serif;
+  box-shadow: 0 4px 10px rgba(255, 153, 200, 0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.action:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffb6d9, #c3a0e0);
+}
+
+/* --- Page de chargement --- */
+#page-chargement-application {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'The Perfect Christmas';
+  font-size: 2rem;
+  color: var(--rose-principal);
+  background: linear-gradient(135deg, var(--lavande), var(--rose-clair));
+  text-shadow: 2px 2px var(--blanc);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .page {
+    padding: 8%;
+    background-size: 70%;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .action {
+    width: 80%;
+  }
+}
+.page-chargement-application {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.banniere {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.banniere img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.banniere h1 {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'The Perfect Christmas', cursive;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 3px 3px #ff99c8;
+  background-color: rgba(255, 182, 193, 0.4);
+  padding: 10px 25px;
+  border-radius: 1rem;
+}
+
