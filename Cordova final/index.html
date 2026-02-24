@@ -1,0 +1,182 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Liste des seances sportives</title>
+  <link rel="stylesheet" href="decoration/application.css">
+  <style></style>
+  <script src="./modele/Seance.js"></script>
+
+  <script src="./vue/VueAjouterSeance.js"></script>
+  <script src="./vue/VueModifierSeance.js"></script>
+  <script src="./vue/VueSeance.js"></script>
+  <script src="./vue/VueListeSeance.js"></script>
+
+<script type="module" src="./Application.js"></script>
+</head>
+
+<body>
+  <div id="page-chargement-application" class="banniere">    <img src="decoration/illustration/Image.png" alt="Chargement FitGirl" class="image-chargement">
+   <h1>Mes Séances FitGirl 💕</h1>
+   </div>
+
+  <script type="plain/text" id="html-vue-liste-seance">
+  <div class="page">
+    <h1>Liste des seances sportives</h1>
+    <a class="action" href="#ajouter-seance">Ajouter une séance</a>
+    <ul id="liste-seance">
+      <li>
+        <a href="#seance/{Seance.id}" class="liste-seance-item">{Seance.nom}</a>
+        <a href="#modifier-seance/{Seance.id}" class="action">Modifier une séance</a>
+      </li>
+    </ul>
+  </div>
+</script>
+<script type="plain/text" id="html-vue-seance">
+  <div class="page">
+    <h1>Seance Sportive</h1>
+
+    <h2 id="seance-nom"></h2>
+    <p id="seance-type"></p>
+    <p id="seance-partiecible"></p>
+    <p id="seance-description"></p>
+
+    <!-- NOUVEAUX CHAMPS -->
+    <p id="seance-date"></p>
+    <p id="seance-duree"></p>
+    <p id="seance-intensite"></p>
+    <p id="seance-calories"></p>
+    <p id="seance-notes"></p>
+
+    <a href="#" class="action">Revenir &agrave; la liste</a>
+    <button id="bouton-supprimer" class="action" type="button">Supprimer</button>
+  </div>
+</script>
+
+  <script type="plain/text" id="html-vue-ajouter-seance">
+  <div class="page">
+    <h1>Ajouter une séance sportive</h1>
+    <form id="formulaire-ajouter">
+      <fieldset>
+        <legend>Identification d'une séance</legend>
+        <div>
+          <label for="seance-nom">Nom</label>
+          <input type="text" id="seance-nom" required />
+        </div>
+        <div>
+          <label for="seance-type">Type</label>
+          <input type="text" id="seance-type" required />
+        </div>
+        <div>
+          <label for="seance-partiecible">Partie cible</label>
+          <input type="text" id="seance-partiecible" required />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Détails</legend>
+        <div>
+          <label for="seance-description">Description</label>
+          <textarea id="seance-description" required></textarea>
+        </div>
+
+        <div>
+          <label for="seance-date">Date</label>
+          <input type="date" id="seance-date" />
+        </div>
+
+        <div>
+          <label for="seance-duree">Durée (minutes)</label>
+          <input type="number" id="seance-duree" min="0" />
+        </div>
+
+        <div>
+          <label for="seance-intensite">Intensité</label>
+          <select id="seance-intensite">
+            <option value="faible">Faible</option>
+            <option value="moyenne" selected>Moyenne</option>
+            <option value="élevée">Élevée</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="seance-calories">Calories estimées</label>
+          <input type="number" id="seance-calories" min="0" />
+        </div>
+
+        <div>
+          <label for="seance-notes">Notes</label>
+          <textarea id="seance-notes"></textarea>
+        </div>
+      </fieldset>
+
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer" />
+    </form>
+    <a href="#" class="action">Annuler et revenir à la liste</a>
+  </div>
+</script>
+
+<script type="plain/text" id="html-vue-modifier-seance">
+  <div class="page">
+    <h1>Modifier une séance sportive</h1>
+    <form id="formulaire-modifier">
+      <fieldset>
+        <legend>Identification de la séance</legend>
+        <div>
+          <label for="seance-nom">Nom</label>
+          <input type="text" id="seance-nom" required />
+        </div>
+        <div>
+          <label for="seance-type">Type</label>
+          <input type="text" id="seance-type" required />
+        </div>
+        <div>
+          <label for="seance-partiecible">Partie cible</label>
+          <input type="text" id="seance-partiecible" required />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Détails</legend>
+        <div>
+          <label for="seance-description">Description</label>
+          <textarea id="seance-description" required></textarea>
+        </div>
+
+        <div>
+          <label for="seance-date">Date</label>
+          <input type="date" id="seance-date" />
+        </div>
+
+        <div>
+          <label for="seance-duree">Durée (minutes)</label>
+          <input type="number" id="seance-duree" min="0" />
+        </div>
+
+        <div>
+          <label for="seance-intensite">Intensité</label>
+          <select id="seance-intensite">
+            <option value="faible">Faible</option>
+            <option value="moyenne">Moyenne</option>
+            <option value="élevée">Élevée</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="seance-calories">Calories estimées</label>
+          <input type="number" id="seance-calories" min="0" />
+        </div>
+
+        <div>
+          <label for="seance-notes">Notes</label>
+          <textarea id="seance-notes"></textarea>
+        </div>
+      </fieldset>
+
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer" />
+    </form>
+
+    <a href="#" class="action">Annuler et revenir à la liste</a>
+  </div>
+</script>
+</body>
+</html>
