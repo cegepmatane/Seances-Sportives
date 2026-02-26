@@ -11,7 +11,7 @@ class Seance {
     dateSeance,
     id
   ) {
-    this.id = id; // id Firestore (string) ou null à l'ajout
+    this.id = id;
     this.nom = nom;
     this.type = type;
     this.partiecible = partiecible;
@@ -22,6 +22,6 @@ class Seance {
     this.intensite = intensite;
     this.caloriesEstimees = caloriesEstimees;
     this.notes = notes;
-    this.dateSeance = dateSeance; // string "YYYY-MM-DD" ou Date
+    this.dateSeance = dateSeance;
   }
 }
