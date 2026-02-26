@@ -8,6 +8,7 @@ class VueAjouterSeance {
     this.actionAjouterSeance = actionAjouterSeance;
   }
 
+
   afficher() {
     document.getElementsByTagName("body")[0].innerHTML = this.html;
     document.getElementById("formulaire-ajouter")
