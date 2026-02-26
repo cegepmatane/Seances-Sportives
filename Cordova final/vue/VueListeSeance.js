@@ -8,6 +8,7 @@ class VueListeSeance {
     this.listeSeanceDonnee = listeSeanceDonnee;
   }
 
+
   afficher() {
     // Remplace le body par le template
     document.getElementsByTagName("body")[0].innerHTML = this.html;

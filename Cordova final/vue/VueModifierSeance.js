@@ -9,6 +9,7 @@ class VueModifierSeance {
     this.actionModifierSeance = actionModifierSeance;
   }
 
+
   afficher() {
     document.getElementsByTagName("body")[0].innerHTML = this.html;
 

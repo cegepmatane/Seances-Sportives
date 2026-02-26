@@ -9,6 +9,7 @@
     this.seance = seance;
   }
 
+
   initialiserActionSupprimerSeance(actionSupprimerSeance) {
     this.actionSupprimerSeance = actionSupprimerSeance;
   }
