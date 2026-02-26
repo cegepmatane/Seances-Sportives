@@ -10,7 +10,7 @@ class Application {
     this.vueModifierSeance = vueModifierSeance;
     this.vueAjouterSeance = vueAjouterSeance;
 
-    // Cache local pour éviter de relire Firestore pour chaque navigation
+
     this.listeSeance = [];
 
     this.vueAjouterSeance.initialiserActionAjouterSeance(seance => this.actionAjouterSeance(seance));
@@ -64,7 +64,7 @@ class Application {
       return;
     }
 
-    // Page modifier (id Firestore = string)
+
     let navModif = hash.match(/^#modifier-seance\/([^/]+)$/);
     if (navModif) {
       const idSeance = navModif[1];
