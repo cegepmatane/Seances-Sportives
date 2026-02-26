@@ -1,4 +1,3 @@
-// donne/SeanceDAO.js
 import { db } from "../firebase.js";
 
 import {
